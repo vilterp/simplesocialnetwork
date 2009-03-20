@@ -3,7 +3,7 @@ require 'digest/sha1'
 class Person < ActiveRecord::Base
   
   def to_s
-    @name
+    self.name
   end
   
   # restful_authentication stuff from here down

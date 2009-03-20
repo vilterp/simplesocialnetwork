@@ -1,15 +1,12 @@
 class PeopleController < ApplicationController  
   
   def home
-    debugger
     @person = current_person
   end
   
   # render new.rhtml
   def new
-    if logged_in?
-      redirect_to home_path
-    end
+    redirect_to home_path if logged_in?
     @person = Person.new
   end
  
