@@ -71,3 +71,777 @@ Migrating to CreatePeople (20090320192350)
 Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 15:27:06) [GET]
 Rendering people/new
 Completed in 41ms (View: 34, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 15:30:58) [GET]
+Rendering people/new
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PeopleController#create (for 127.0.0.1 at 2009-03-20 15:31:12) [POST]
+  Parameters: {"commit"=>"Sign up", "authenticity_token"=>"lB/F1NjSp7z5lhoH+n1xTr43hfK2+xU3gtAxUtlSNPg=", "person"=>{"password_confirmation"=>"whatisthemeaning", "password"=>"whatisthemeaning", "login"=>"bonasaurus", "email"=>"bonasaurus1@gmail.com"}}
+  [4;36;1mPerson Exists (0.1ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."login" = 'bonasaurus') LIMIT 1[0m
+  [4;35;1mPerson Exists (0.1ms)[0m   [0mSELECT "people".id FROM "people" WHERE ("people"."email" = 'bonasaurus1@gmail.com') LIMIT 1[0m
+  [4;36;1mPerson Create (0.5ms)[0m   [0;1mINSERT INTO "people" ("name", "salt", "updated_at", "crypted_password", "remember_token_expires_at", "remember_token", "login", "email", "created_at") VALUES('', '67d7776f7928d7466019e81d097b91f8dc212e4a', '2009-03-20 19:31:12', 'ea322a7211f7921746c25bfe1b63e80175f89737', NULL, NULL, 'bonasaurus', 'bonasaurus1@gmail.com', '2009-03-20 19:31:12')[0m
+Redirected to http://localhost:3000/
+Completed in 77ms (DB: 1) | 302 Found [http://localhost/people]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 15:31:12) [GET]
+Rendering people/new
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 15:44:12) [GET]
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/home
+Completed in 20ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 15:44:12) [GET]
+
+ActionController::UnknownAction (No action responded to home. Actions: create, destroy, edit, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 15:46:39) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/home
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 15:46:39) [GET]
+
+NameError (undefined local variable or method `current_user' for #<PeopleController:0x23f04d8>):
+  app/controllers/people_controller.rb:4:in `home'
+
+Rendered rescues/_trace (80.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 15:47:03) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/home
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 15:47:03) [GET]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template people/home.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 15:47:27) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/home
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 15:47:27) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+Rendered people/_person_bar (2.1ms)
+Completed in 21ms (View: 12, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-20 15:47:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blog.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2009-03-20 15:47:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = '1') LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template people/show.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2009-03-20 15:47:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendered people/_person_bar (2.6ms)
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-20 15:47:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blog.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20090320192350)
+Migrating to RemoveLogin (20090320195044)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TEMPORARY TABLE "altered_people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("people")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_people_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_people_on_login" ON "altered_people" ("login")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "people"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("altered_people")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_people_on_login')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "altered_people"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090320195044')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("people")[0m
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mPerson Exists (0.1ms)[0m   [0;1mSELECT "people".id FROM "people" WHERE ("people"."email" = 'bonasaurus1@gmail.com' AND "people".id <> 1) LIMIT 1[0m
+  [4;35;1mPerson Update (0.3ms)[0m   [0mUPDATE "people" SET "name" = 'Pete Vilter', "updated_at" = '2009-03-20 20:00:01' WHERE "id" = 1[0m
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2009-03-20 16:01:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `login' for #<Person:0x24aa93c>) on line #2 of app/views/people/_person_bar.html.erb:
+1: <% if logged_in? -%>
+2:   <div id="person-bar-greeting">Logged in as <%= link_to_current_person :content_method => :login %></div>
+3:   <div id="person-bar-action"  >(<%= link_to "Log out", logout_path, { :title => "Log out" }    %>)</div>
+4: <% else -%>
+5:   <div id="person-bar-greeting"><%= link_to_login_with_IP 'Not logged in', :style => 'border: none;' %></div>
+
+    app/helpers/people_helper.rb:50:in `send'
+    app/helpers/people_helper.rb:50:in `link_to_person'
+    app/helpers/people_helper.rb:84:in `link_to_current_person'
+    app/views/people/_person_bar.html.erb:2
+    app/views/layouts/application.html.erb:16
+
+Rendered rescues/_trace (45.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2009-03-20 16:06:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/show
+ERROR: compiling _run_erb_app47views47layouts47application46html46erb RAISED compile error
+/Users/Vilter/Code/simplesocialnetwork/app/views/layouts/application.html.erb:25: syntax error, unexpected kENSURE, expecting kEND
+/Users/Vilter/Code/simplesocialnetwork/app/views/layouts/application.html.erb:27: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47layouts47application46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n"
+@output_buffer.concat "       \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n"
+@output_buffer.concat "<head>\n"
+@output_buffer.concat "  <meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n"
+@output_buffer.concat "  <title>"; @output_buffer.concat(( controller.controller_name.titleize ).to_s); @output_buffer.concat ": "; @output_buffer.concat(( controller.action_name ).to_s); @output_buffer.concat "</title>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( stylesheet_link_tag 'application' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "</head>\n"
+@output_buffer.concat "<body>\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    <h1>"; @output_buffer.concat(( link_to "Simple Rails Social Networkk", home_path ).to_s); @output_buffer.concat "</h1>\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    <p style=\"color: green\">"; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    ";  unless logged_in? ; @output_buffer.concat "\n"
+@output_buffer.concat "      "; @output_buffer.concat(( link_to 'Log in', login_path ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    ";  else ; @output_buffer.concat "\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    "; @output_buffer.concat(( yield  ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "</body>\n"
+@output_buffer.concat "</html>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/Vilter/Code/simplesocialnetwork/app/views/layouts/application.html.erb:27:in `compile!'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:347:in `_render_with_layout'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+/Users/Vilter/.gem/ruby/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/Vilter/Code/simplesocialnetwork/app/views/layouts/application.html.erb:25: syntax error, unexpected kENSURE, expecting kEND
+/Users/Vilter/Code/simplesocialnetwork/app/views/layouts/application.html.erb:27: syntax error, unexpected $end, expecting kEND) on line #25 of app/views/layouts/application.html.erb:
+22: </body>
+23: </html>
+
+    app/views/layouts/application.html.erb:27:in `compile!'
+
+Rendered rescues/_trace (88.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2009-03-20 16:06:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/show
+ERROR: compiling _run_erb_app47views47layouts47application46html46erb RAISED compile error
+/Users/Vilter/Code/simplesocialnetwork/app/views/layouts/application.html.erb:25: syntax error, unexpected kENSURE, expecting kEND
+/Users/Vilter/Code/simplesocialnetwork/app/views/layouts/application.html.erb:27: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47layouts47application46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n"
+@output_buffer.concat "       \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n"
+@output_buffer.concat "<head>\n"
+@output_buffer.concat "  <meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n"
+@output_buffer.concat "  <title>"; @output_buffer.concat(( controller.controller_name.titleize ).to_s); @output_buffer.concat ": "; @output_buffer.concat(( controller.action_name ).to_s); @output_buffer.concat "</title>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( stylesheet_link_tag 'application' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "</head>\n"
+@output_buffer.concat "<body>\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    <h1>"; @output_buffer.concat(( link_to "Simple Rails Social Networkk", home_path ).to_s); @output_buffer.concat "</h1>\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    <p style=\"color: green\">"; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    ";  unless logged_in? ; @output_buffer.concat "\n"
+@output_buffer.concat "      "; @output_buffer.concat(( link_to 'Log in', login_path ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    ";  else ; @output_buffer.concat "\n"
+@output_buffer.concat "    \n"
+@output_buffer.concat "    "; @output_buffer.concat(( yield  ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "</body>\n"
+@output_buffer.concat "</html>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/Vilter/Code/simplesocialnetwork/app/views/layouts/application.html.erb:27:in `compile!'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:347:in `_render_with_layout'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Users/Vilter/.gem/ruby/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Users/Vilter/.gem/ruby/1.8/gems/actionpack-2.3.2/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+/Users/Vilter/.gem/ruby/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/Vilter/Code/simplesocialnetwork/app/views/layouts/application.html.erb:25: syntax error, unexpected kENSURE, expecting kEND
+/Users/Vilter/Code/simplesocialnetwork/app/views/layouts/application.html.erb:27: syntax error, unexpected $end, expecting kEND) on line #25 of app/views/layouts/application.html.erb:
+22: </body>
+23: </html>
+
+    app/views/layouts/application.html.erb:27:in `compile!'
+
+Rendered rescues/_trace (36.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2009-03-20 16:07:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Completed in 70ms (View: 62, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2009-03-20 16:07:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/show
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Completed in 14ms (View: 5, DB: 1) | 200 OK [http://localhost/people/1]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:07:15) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+Completed in 8ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:07:25) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:08:12) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (can't convert nil into String) on line #1 of app/views/people/home.html.erb:
+1: Hi, <%= current_person %>!
+
+    app/views/people/home.html.erb:1:in `concat'
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (80.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 16:08:23) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/home
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:08:23) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (can't convert nil into String) on line #1 of app/views/people/home.html.erb:
+1: Hi, <%= current_person %>!
+
+    app/views/people/home.html.erb:1:in `concat'
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (90.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-03-20 16:08:34) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-03-20 16:08:40) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"lB/F1NjSp7z5lhoH+n1xTr43hfK2+xU3gtAxUtlSNPg=", "password"=>"whatisthemeaning", "email"=>"bonasaurus1@gmail.com", "remember_me"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."email" = 'bonasaurus1@gmail.com') LIMIT 1[0m
+  [4;35;1mPerson Update (0.3ms)[0m   [0mUPDATE "people" SET "remember_token" = '92024a86411bff81f504fad96840cec4f374166e', "remember_token_expires_at" = '2009-04-03 20:08:40', "updated_at" = '2009-03-20 20:08:40' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 121ms (DB: 1) | 302 Found [http://localhost/session]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 16:08:40) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/home
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:08:40) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (can't convert nil into String) on line #1 of app/views/people/home.html.erb:
+1: Hi, <%= current_person %>!
+
+    app/views/people/home.html.erb:1:in `concat'
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-03-20 16:09:55) [GET]
+
+ActionController::RoutingError (No route matches "/sessions/destroy" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-03-20 16:10:07) [GET]
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/logout]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 16:10:07) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 16:10:38) [GET]
+Rendering template within layouts/application
+Rendering people/new
+Completed in 69ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-03-20 16:10:43) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-03-20 16:10:47) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"7x705gTmpvY/sAsOcK4LV+9Y3FsCN95kkGB1DEmDilU=", "password"=>"whatisthemeaning", "email"=>"bonasaurus1@gmail.com", "remember_me"=>"1"}
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."email" = 'bonasaurus1@gmail.com') LIMIT 1[0m
+  [4;35;1mPerson Update (2.0ms)[0m   [0mUPDATE "people" SET "remember_token" = 'e8d3ee5f61c5e45eb58874236364d527f6c772c2', "remember_token_expires_at" = '2009-04-03 20:10:47', "updated_at" = '2009-03-20 20:10:47' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 17ms (DB: 2) | 302 Found [http://localhost/session]
+
+
+Processing PeopleController#new (for 127.0.0.1 at 2009-03-20 16:10:47) [GET]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/home
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:10:47) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (can't convert nil into String) on line #1 of app/views/people/home.html.erb:
+1: Hi, <%= current_person %>! <%= link_to 'Log Out', logout_path %>
+
+    app/views/people/home.html.erb:1:in `concat'
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (92.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."email" = 'bonasaurus1@gmail.com') LIMIT 1[0m
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:19:36) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (can't convert nil into String) on line #1 of app/views/people/home.html.erb:
+1: Hi, <%= current_person %>! <%= link_to 'Log Out', logout_path %>
+
+    app/views/people/home.html.erb:1:in `concat'
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:20:14) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:20:36) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (can't convert nil into String) on line #1 of app/views/people/home.html.erb:
+1: <%= current_person %>
+
+    app/views/people/home.html.erb:1:in `concat'
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (39.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:20:47) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:22:29) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+Completed in 9ms (View: 1, DB: 0) | 200 OK [http://localhost/home]
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:22:46) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (can't convert nil into String) on line #1 of app/views/people/home.html.erb:
+1: <%= current_person %>
+
+    app/views/people/home.html.erb:1:in `concat'
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (87.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:23:21) [GET]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (can't convert nil into String) on line #1 of app/views/people/home.html.erb:
+1: <%= @person %>
+
+    app/views/people/home.html.erb:1:in `concat'
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (36.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:24:35) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (can't convert nil into String) on line #1 of app/views/people/home.html.erb:
+1: <%= @current_person %>
+
+    app/views/people/home.html.erb:1:in `concat'
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (38.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:24:50) [GET]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (can't convert nil into String) on line #1 of app/views/people/home.html.erb:
+1: <%= current_person %>
+
+    app/views/people/home.html.erb:1:in `concat'
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (39.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:25:03) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (can't convert nil into String) on line #1 of app/views/people/home.html.erb:
+1: <%= current_person %>
+
+    app/views/people/home.html.erb:1:in `concat'
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (84.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:25:17) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (undefined local variable or method `login_from_session' for #<ActionView::Base:0x253a208>) on line #1 of app/views/people/home.html.erb:
+1: <%= login_from_session %>
+
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (91.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:26:37) [GET]
+  [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+#<Person id: 1, name: "Pete Vilter", email: "bonasaurus1@gmail.com", crypted_password: "ea322a7211f7921746c25bfe1b63e80175f89737", salt: "67d7776f7928d7466019e81d097b91f8dc212e4a", created_at: "2009-03-20 19:31:12", updated_at: "2009-03-20 20:10:47", remember_token: "e8d3ee5f61c5e45eb58874236364d527f6c772c2", remember_token_expires_at: "2009-04-03 20:10:47">
+Rendering template within layouts/application
+Rendering people/home
+
+ActionView::TemplateError (undefined local variable or method `login_from_session' for #<ActionView::Base:0x25c95d4>) on line #1 of app/views/people/home.html.erb:
+1: <%= login_from_session %>
+
+    app/views/people/home.html.erb:1
+
+Rendered rescues/_trace (39.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:27:54) [GET]
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  lib/authenticated_system.rb:12:in `current_person'
+  app/controllers/people_controller.rb:4:in `home'
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#home (for 127.0.0.1 at 2009-03-20 16:29:07) [GET]
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering people/home

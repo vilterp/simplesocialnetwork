@@ -1,19 +1,24 @@
 <h1>Sign up as a new user</h1>
+
+or <%= link_to 'Log in', login_path %>
+
 <% @person.password = @person.password_confirmation = nil %>
 
 <%= error_messages_for :person %>
+
 <% form_for :person, :url => people_path do |f| -%>
-<p><%= label_tag 'login' %><br/>
-<%= f.text_field :login %></p>
+  
+  <p><%= label_tag 'name' %></p>
+  <%= f.text_field :name %>
+  
+  <p><%= label_tag 'email' %><br/>
+  <%= f.text_field :email %></p>
 
-<p><%= label_tag 'email' %><br/>
-<%= f.text_field :email %></p>
+  <p><%= label_tag 'password' %><br/>
+  <%= f.password_field :password %></p>
 
-<p><%= label_tag 'password' %><br/>
-<%= f.password_field :password %></p>
+  <p><%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
+  <%= f.password_field :password_confirmation %></p>
 
-<p><%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
-<%= f.password_field :password_confirmation %></p>
-
-<p><%= submit_tag 'Sign up' %></p>
+  <p><%= submit_tag 'Sign up' %></p>
 <% end -%>

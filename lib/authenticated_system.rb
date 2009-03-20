@@ -110,8 +110,8 @@ module AuthenticatedSystem
 
     # Called from #current_person.  Now, attempt to login by basic authentication information.
     def login_from_basic_auth
-      authenticate_with_http_basic do |login, password|
-        self.current_person = Person.authenticate(login, password)
+      authenticate_with_http_basic do |email, password|
+        self.current_person = Person.authenticate(email, password)
       end
     end
     

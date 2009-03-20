@@ -1,7 +1,15 @@
 class PeopleController < ApplicationController  
-
+  
+  def home
+    debugger
+    @person = current_person
+  end
+  
   # render new.rhtml
   def new
+    if logged_in?
+      redirect_to home_path
+    end
     @person = Person.new
   end
  
@@ -22,4 +30,30 @@ class PeopleController < ApplicationController
       render :action => 'new'
     end
   end
+  
+  def show
+    @person = Person.find_by_id(params[:id])
+  end
+  
+  def edit
+    @person = Person.find_by_id(params[:id])
+  end
+  
+  def update
+    @person = Person.find(params[:id])
+    if @person.update_attributes(params[:person])
+      flash[:notice] = 'Profile updated.'
+      redirect_to @person
+    else
+      render :action => 'edit'
+    end
+  end
+  
+  def destroy
+    @person = Person.find_by_id(params[:id])
+    @person.destroy
+    flash[:notice] = 'Your account was deleted! Bye!'
+    redirect_to signup_path
+  end
+  
 end
