@@ -8,7 +8,8 @@ class Person < ActiveRecord::Base
   has_many :wall_posts_posted, :class_name => "WallPost", :foreign_key => "poster_id"
   has_many :messages_from, :class_name => "Message", :foreign_key => "sender_id"
   has_many :messages_to, :class_name => "Message", :foreign_key => "recipient_id"
-  has_many :unread_messages, :class_name => "Message", :foreign_key => "recipient_id", :conditions => "unread = 1" # doesn't work
+  has_many :unread_messages, :class_name => "Message", :foreign_key => "recipient_id",
+           :conditions => "unread = 't'" # 't' is probably an sqlite only thing...
   
   def to_s
     self.name

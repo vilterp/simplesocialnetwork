@@ -1118,3 +1118,86 @@ Migrating to AddUnreadDefault (20090320233641)
   [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages".recipient_id = 2 AND (unread = 1)) [0m
   [4;36;1mMessage Load (0.4ms)[0m   [0;1mSELECT * FROM "messages" ORDER BY messages.id DESC LIMIT 1[0m
   [4;35;1mPerson Load (0.3ms)[0m   [0mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages".recipient_id = 1 AND (unread = 1)) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20090320192350)
+Migrating to RemoveLogin (20090320195044)
+Migrating to CreateStuff (20090320211610)
+Migrating to ChangeNames (20090320212944)
+Migrating to RenameConversationMemberships (20090320230347)
+Migrating to DropStatuses (20090320231200)
+Migrating to AddMessageUnread (20090320233447)
+Migrating to AddUnreadDefault (20090320233641)
+Migrating to ChangeUnreadFormat (20090321020413)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePeople (20090320192350)
+Migrating to RemoveLogin (20090320195044)
+Migrating to CreateStuff (20090320211610)
+Migrating to ChangeNames (20090320212944)
+Migrating to RenameConversationMemberships (20090320230347)
+Migrating to DropStatuses (20090320231200)
+Migrating to AddMessageUnread (20090320233447)
+Migrating to AddUnreadDefault (20090320233641)
+Migrating to ChangeUnreadFormat (20090321020413)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mMessage Load (0.6ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender_id" integer, "conversation_id" integer, "body" text, "created_at" datetime, "recipient_id" integer, "unread" boolean DEFAULT 't') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mDROP TABLE "messages"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender_id" integer, "conversation_id" integer, "body" text, "created_at" datetime, "recipient_id" integer, "unread" boolean DEFAULT 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_messages")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "altered_messages"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090321020413')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("conversations")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("conversations_people")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("friendships")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("people")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("wall_posts")[0m
+  [4;36;1mMessage Load (0.9ms)[0m   [0;1mSELECT * FROM "messages" [0m
+  [4;36;1mPerson Load (0.6ms)[0m   [0;1mSELECT * FROM "people" LIMIT 1[0m
+  [4;35;1mMessage Load (0.3ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages".recipient_id = 1 AND (unread = 1)) [0m
+  [4;36;1mConversation Load (0.3ms)[0m   [0;1mSELECT * FROM "conversations" ORDER BY conversations.id DESC LIMIT 1[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" LIMIT 1[0m
+  [4;36;1mConversation Load (0.4ms)[0m   [0;1mSELECT * FROM "conversations" ORDER BY conversations.id DESC LIMIT 1[0m
+  [4;35;1mPerson Load (0.4ms)[0m   [0mSELECT * FROM "people" ORDER BY people.id DESC LIMIT 1[0m
+  [4;36;1mMessage Create (0.4ms)[0m   [0;1mINSERT INTO "messages" ("body", "unread", "conversation_id", "recipient_id", "sender_id", "created_at") VALUES('Of course.', 't', 2, 2, 1, '2009-03-21 02:12:52')[0m
+  [4;35;1mMessage Load (0.8ms)[0m   [0mSELECT * FROM "messages" [0m
+  [4;36;1mMessage Update (0.3ms)[0m   [0;1mUPDATE "messages" SET "unread" = 'f' WHERE "id" = 4[0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages".recipient_id = 2 AND (unread = 1)) [0m
+  [4;36;1mPerson Load (0.7ms)[0m   [0;1mSELECT * FROM "people" [0m
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+  [4;36;1mMessage Load (0.2ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages".recipient_id = 1 AND (unread = 't')) [0m
+  [4;35;1mMessage Load (0.2ms)[0m   [0mSELECT * FROM "messages" WHERE ("messages".recipient_id = 2 AND (unread = 't')) [0m
+  [4;36;1mPerson Load (0.4ms)[0m   [0;1mSELECT * FROM "people" ORDER BY people.id DESC LIMIT 1[0m
+  [4;35;1mMessage Load (0.4ms)[0m   [0mSELECT * FROM "messages" ORDER BY messages.id DESC LIMIT 1[0m
+  [4;36;1mMessage Update (0.3ms)[0m   [0;1mUPDATE "messages" SET "unread" = 'f' WHERE "id" = 5[0m
+  [4;35;1mConversation Load (0.3ms)[0m   [0mSELECT * FROM "conversations" ORDER BY conversations.id DESC LIMIT 1[0m
+  [4;36;1mMessage Load (1.0ms)[0m   [0;1mSELECT * FROM "messages" WHERE ("messages".conversation_id = 2) [0m
