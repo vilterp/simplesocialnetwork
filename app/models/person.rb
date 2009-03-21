@@ -3,22 +3,25 @@ require 'digest/sha1'
 class Person < ActiveRecord::Base
   
   has_many :comments, :foreign_key => "commenter_id"
-  has_many :conversations, :through => "conversation_memberships"
+  has_and_belongs_to_many :conversations
   has_many :wall_posts, :foreign_key => "postee_id"
   has_many :wall_posts_posted, :class_name => "WallPost", :foreign_key => "poster_id"
-  has_many :messages_sent, :class_name => "Message", :foreign_key => "sender_id"
-  has_many :messages_received, :class_name => "Message", :foreign_key => "recipient_id"
-  has_many :statuses
+  has_many :messages_from, :class_name => "Message", :foreign_key => "sender_id"
+  has_many :messages_to, :class_name => "Message", :foreign_key => "recipient_id"
+  has_many :unread_messages, :class_name => "Message", :foreign_key => "recipient_id", :conditions => "unread = 1" # doesn't work
   
   def to_s
     self.name
   end
   
-  def set_status(status)
-    self.status = status
-    Status.create :stauts => status do |s|
-      s.person = self
-    end
+  def send_message(options = {})
+    Message.create :sender => self, :recipient => options[:to], :body => options[:body],
+                   :conversation => options[:conversation]
+  end
+  
+  def read(message)
+    message.unread = false
+    message.save
   end
   
   # restful_authentication stuff from here down
